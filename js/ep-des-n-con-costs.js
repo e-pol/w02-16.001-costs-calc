@@ -25,16 +25,8 @@ window.onload = function() {
      */
     MODULE.controller = MODULE.controller || {
             events: {
-                ui: {
-                    /**
-                     * Invoked when user changes any calc parameter
-                     *
-                     * @method changedParameters
-                     * @return {undefined}
-                     */
-                    changedParameters: function(){
-                        console.log('CONTROLLER.events.ui.changedParameters()');
-                    }
+                uiChanged: function () {
+                    console.log('ui changed');
                 }
             },
 
@@ -70,79 +62,70 @@ window.onload = function() {
 
     MODULE.view = MODULE.view || {
             ui: {
+                elem: document.getElementById('ep-des-n-con-costs'),
+                
                 main: {
-                    //Number of house floors
-                    floors: {
-                        /**
-                         * Gets number of house floors from UI
-                         *
-                         * @getter floors
-                         * @return {Number} floors
-                         */
-                        get floors(){
+
+                    /**
+                     * Gets number of house floors from UI
+                     *
+                     * @getter floors
+                     * @return {Number} floors
+                     */
+                    get floors(){
                             var floors = 1;
                             return floors;
-                        },
-
-                        /**
-                         * Sets number of house floors to UI
-                         *
-                         * @setter floors
-                         * @param {Number} floors
-                         */
-                        set floors(floors){
-
-                        }
                     },
 
-                    // House total area
-                    area: {
-                        /**
+                    /**
+                     * Sets number of house floors to UI
+                     *
+                     * @setter floors
+                     * @param {Number} floors
+                     */
+                    set floors(floors){
+
+                    },
+
+                    /**
                          * Gets area value from UI
                          *
                          * @getter area
                          * @return {Number} area
                          */
-                        get area(){
-                            var area = 0;
-                            return area;
-                        },
-
-                        /**
-                         * Sets area value to UI
-                         *
-                         * @setter area
-                         * @param {Number} area
-                         */
-                        set area(area){
-
-                        }
+                    get area(){
+                        var area = 0;
+                        return area;
                     },
 
-                    // Total cost of design
-                    totalCost: {
-                        /**
-                         * Shows total cost
-                         *
-                         * @setter totalCost
-                         * @param {Number} totalCost
-                         */
-                        set totalCost(totalCost){
+                    /**
+                     * Sets area value to UI
+                     *
+                     * @setter area
+                     * @param {Number} area
+                     */
+                    set area(area){
 
-                        }
                     },
 
-                    // Shows different messages to user
-                    message: {
-                        /**
-                         * Shows message
-                         *
-                         * @setter message
-                         * @param {String} message
-                         */
-                        set message(message){
+                    /**
+                     * Shows total cost
+                     *
+                     * @setter totalCost
+                     * @param {Number} totalCost
+                     */
+                    set totalCost(totalCost){
 
-                        }
+                    },
+
+                    /**
+                     * Shows message
+                     *
+                     * @setter message
+                     * @param {String} message
+                     */
+                    set message(message){
+
                     }
                 },
 
@@ -160,7 +143,7 @@ window.onload = function() {
                         },
 
                         /**
-                         * Sets the UI element to checked if true
+                         * Sets the section UI element to checked/unchecked
                          *
                          * @setter included
                          * @param {Boolean} value
@@ -169,10 +152,106 @@ window.onload = function() {
 
                         },
 
-                        base: {},
-                        roofs: {},
-                        territory: {}
+                        base: {
+                            /**
+                             * Checks if the user selected to include this item
+                             *
+                             * @getter included
+                             * @return {Boolean} value
+                             */
+                            get included(){
+                                var value = true;
+                                return value;
+                            },
+
+                            /**
+                             * Sets the UI item element to checked/unchecked
+                             *
+                             * @setter included
+                             * @param {Boolean} value
+                             */
+                            set included(value){
+
+                            },
+
+                            /**
+                             * Shows Item cost
+                             *
+                             * @setter cost
+                             * @param {Number} cost
+                             */
+                            set cost(cost){
+
+                            }
+                        },
+
+                        roofs: {
+                            /**
+                             * Checks if the user selected to include this item
+                             *
+                             * @getter included
+                             * @return {Boolean} value
+                             */
+                            get included(){
+                                var value = true;
+                                return value;
+                            },
+
+                            /**
+                             * Sets the UI item element to checked/unchecked
+                             *
+                             * @setter included
+                             * @param {Boolean} value
+                             */
+                            set included(value){
+
+                            },
+
+                            /**
+                             * Shows Item cost
+                             *
+                             * @setter cost
+                             * @param {Number} cost
+                             */
+                            set cost(cost){
+
+                            }
+                        },
+                        
+                        territory: {
+                            /**
+                             * Checks if the user selected to include this item
+                             *
+                             * @getter included
+                             * @return {Boolean} value
+                             */
+                            get included(){
+                                var value = true;
+                                return value;
+                            },
+
+                            /**
+                             * Sets the UI item element to checked/unchecked
+                             *
+                             * @setter included
+                             * @param {Boolean} value
+                             */
+                            set included(value){
+
+                            },
+
+                            /**
+                             * Shows Item cost
+                             *
+                             * @setter cost
+                             * @param {Number} cost
+                             */
+                            set cost(cost){
+
+                            }
+                        }
                     },
+
                     construct: {
                         base: {},
                         beams: {},
@@ -181,11 +260,10 @@ window.onload = function() {
                 }
             },
 
-            handleEvent: function(elem, event, bool){
-                
-            },
-
             init: function(){
+                this.ui.elem.addEventListener('change', function(){
+                    MODULE.controller.events.uiChanged();
+                }, false);
                 console.log('VIEW initiated...');
             }
         };
