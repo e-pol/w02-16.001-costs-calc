@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Стоимость проектирования и строительства</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/ep-des-n-con-costs.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="ep-des-n-con-costs">
+                <div id="costs-main-params" class="costs-main-params">
+                    <h2>Основные параметры</h2>
+                    <div class="costs-main-params-floors">
+                        <div class="main-params-floors-description">Этажи:</div>
+                        <div class="main-params-floors-checkers">
+                            <input type="radio" name="costs-main-params-floors" id="costs-main-params-floors-1" value="1">
+                            <label for="costs-main-params-floors-1">1</label>
+                            <input type="radio" name="costs-main-params-floors" id="costs-main-params-floors-2" value="2">
+                            <label for="costs-main-params-floors-2">2</label>
+                            <input type="radio" name="costs-main-params-floors" id="costs-main-params-floors-3"  value="3">
+                            <label for="costs-main-params-floors-3">3</label>
+                        </div>
+                    </div>
+                    <div class="costs-main-params-area">
+                        <div class="main-params-area-description">Площадь:</div>
+                        <div class="main-params-area-checkers">
+                            <input type="number" id="costs-main-params-area" min="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="costs-main-total"></div>
+                <div class="costs-main-info"></div>
+                <div id="costs-design" class="costs-design">
+                    <h2>Стоимость проекта</h2>
+                    <div class="costs-design-total">
+                        <span id="costs-design-total-value">23 000 р.</span>
+                    </div>
+                    <div class="costs-design-info"></div>
+                    <div class="costs-design-sections">
+                        <div id="costs-design-architect" class="costs-design-architect">
+                            <h3>Архитектурные решения</h3>
+                            <div class="design-architect-total">
+                                Итого:
+                                <span id="design-architect-total-value">11 000 р.</span>
+                            </div>
+                            <div class="design-architect-info"></div>
+                            <div class="design-architect-subsections">
+                                <div id="design-architect-base" class="design-architect-base-subsection">
+                                    <div class="architect-base-description">
+                                        <ul>
+                                            <li>Планы этажей</li>
+                                            <li>Разрезы</li>
+                                            <li>Фасады</li>
+                                            <li>Виды</li>
+                                        </ul>
+                                    </div>
+                                    <div class="architect-base-checker">
+                                        <input id="architect-base-checker" type="checkbox" name="design-architect-base" checked="checked">
+                                    </div>
+                                    <div class="architect-base-total">
+                                        <span id="architect-base-total-value">10 000 р.</span>
+                                    </div>
+                                </div>
+                                <div id="design-architect-roofs" class="design-architect-roof">
+                                    <div class="architect-roof-description">
+                                        <ul>
+                                            <li>План кровли</li>
+                                        </ul>
+                                    </div>
+                                    <div class="architect-roof-checker">
+                                        <input id="architect-roofs-checker" type="checkbox" name="design-architect-roof" checked="checked">
+                                    </div>
+                                    <div class="architect-roof-total">
+                                        <span id="architect-roof-total-value">1 000 р.</span>
+                                    </div>
+                                </div>
+                                <div id="design-architect-territory" class="design-architect-territory">
+                                    <div class="architect-territory-description">
+                                        <ul>
+                                            <li>План участка</li>
+                                        </ul>
+                                    </div>
+                                    <div class="architect-territory-checker">
+                                        <input id="architect-territory-checker" type="checkbox" name="design-architect-territory">
+                                    </div>
+                                    <div class="architect-territory-total">
+                                        <span id="architect-territory-total-value">1 000 р.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="costs-design-construct" class="costs-design-construct">
+                            <h3>Конструктивные решения</h3>
+                            <div class="design-construct-total">
+                                Итого:
+                                <span id="design-construct-total-value">12 000 р.</span>
+                            </div>
+                            <div class="design-construct-info"></div>
+                            <div class="design-construct-subsections">
+                                <div id="design-construct-base" class="design-construct-base">
+                                    <div class="construct-base-description">
+                                        <ul>
+                                            <li>План конструкций</li>
+                                            <li>Развертки стен (порядовки)</li>
+                                            <li>План укладки 1го венца</li>
+                                            <li>Спецификация элементов</li>
+                                            <li>Ракрой</li>
+                                        </ul>
+                                    </div>
+                                    <div class="construct-base-checker">
+                                        <input id="construct-base-checker"  type="checkbox" name="design-construct-base" checked="checked" disabled="disabled">
+                                    </div>
+                                    <div class="construct-base-total">
+                                        <span id="construct-base-total-value">8 000 р.</span>
+                                    </div>
+                                </div>
+                                <div id="design-construct-beams" class="design-construct-beams">
+                                    <div class="construct-beams-description">
+                                        <ul>
+                                            <li>План балок</li>
+                                            <li>Спецификация</li>
+                                        </ul>
+                                    </div>
+                                    <div class="construct-beams-checker">
+                                        <input id="construct-beams-checker"  type="checkbox" name="design-construct-beams" checked="checked">
+                                    </div>
+                                    <div class="construct-beams-total">
+                                        <span id="construct-beams-total-value">2 000 р.</span>
+                                    </div>
+                                </div>
+                                <div id="design-construct-rafters" class="design-construct-rafters">
+                                    <div class="construct-rafters-description">
+                                        <ul>
+                                            <li>План стропил</li>
+                                            <li>Спецификация</li>
+                                        </ul>
+                                    </div>
+                                    <div class="construct-rafters-checker">
+                                        <input id="construct-rafters-checker" type="checkbox" name="design-construct-rafters" checked="checked">
+                                    </div>
+                                    <div class="construct-rafters-total">
+                                        <span id="construct-rafters-total-value">2 000 р.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="costs-construct">
+                    <div class="costs-construct-total"></div>
+                    <div class="costs-construct-info"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="js/ep-des-n-con-costs.js"></script>
+</body>
+</html>

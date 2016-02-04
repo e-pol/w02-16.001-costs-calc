@@ -1,0 +1,88 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 980px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+/* typography */
+
+body {
+    font-size: 1em; /* desktop: lg */
+    line-height: 1.375;
+}
+
+h1 {
+    font-size: 3em; /* desktop: lg */
+    line-height: 1.05;
+}
+
+h2 {
+    font-size: 2.25em; /* desktop: lg */
+    line-height: 1.25;
+}
+
+h3 {
+    font-size: 1.75em; /* desktop: lg */
+    line-height: 1.25;
+}
+
+h4 {
+    font-size: 1.125em; /* desktop: lg */
+    line-height: 1.22222222;
+}
+
+blockquote {
+    font-size: 1.5em; /* desktop: lg */
+    line-height: 1.45833333;
+}
+
+/* module: costs */
+
+.costs-main-params,
+.costs-design-architect,
+.costs-design-construct {
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+}
+
+[class^="design-"] [class$="-description"] {
+    width: 79%;
+    display: inline-block;
+}
+
+[class^="design-"] [class$="-checker"] {
+    width: 19%;
+    display: inline-block;
+}
+
+[class^="costs-main-params"] [class$="-description"] {
+    display: inline-block;
+    width: 49%;
+}
+
+[class^="costs-main-params"] [class$="-checkers"] {
+    display: inline-block;
+    width: 49%;
+}
+
+[class^="costs-"] input[type="number"] {
+    width: 8em;
+}
+
+[class$="-total"] {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    text-align: right;
+}
+
+[class*="subsections"] [class*="design-architect"],
+[class*="subsections"] [class*="design-construct"] {
+    padding: 1em 0;
+}]
