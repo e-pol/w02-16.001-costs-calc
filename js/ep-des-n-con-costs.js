@@ -69,6 +69,122 @@ window.onload = function() {
      */
 
     MODULE.view = MODULE.view || {
+            ui: {
+                main: {
+                    //Number of house floors
+                    floors: {
+                        /**
+                         * Gets number of house floors from UI
+                         *
+                         * @getter floors
+                         * @return {Number} floors
+                         */
+                        get floors(){
+                            var floors = 1;
+                            return floors;
+                        },
+
+                        /**
+                         * Sets number of house floors to UI
+                         *
+                         * @setter floors
+                         * @param {Number} floors
+                         */
+                        set floors(floors){
+
+                        }
+                    },
+
+                    // House total area
+                    area: {
+                        /**
+                         * Gets area value from UI
+                         *
+                         * @getter area
+                         * @return {Number} area
+                         */
+                        get area(){
+                            var area = 0;
+                            return area;
+                        },
+
+                        /**
+                         * Sets area value to UI
+                         *
+                         * @setter area
+                         * @param {Number} area
+                         */
+                        set area(area){
+
+                        }
+                    },
+
+                    // Total cost of design
+                    totalCost: {
+                        /**
+                         * Shows total cost
+                         *
+                         * @setter totalCost
+                         * @param {Number} totalCost
+                         */
+                        set totalCost(totalCost){
+
+                        }
+                    },
+
+                    // Shows different messages to user
+                    message: {
+                        /**
+                         * Shows message
+                         *
+                         * @setter message
+                         * @param {String} message
+                         */
+                        set message(message){
+
+                        }
+                    }
+                },
+
+                design: {
+                    architect: {
+                        /**
+                         * Checks if the user selected to include this section
+                         *
+                         * @getter included
+                         * @return {Boolean} value
+                         */
+                        get included(){
+                            var value = true;
+                            return value;
+                        },
+
+                        /**
+                         * Sets the UI element to checked if true
+                         *
+                         * @setter included
+                         * @param {Boolean} value
+                         */
+                        set included(value){
+
+                        },
+
+                        base: {},
+                        roofs: {},
+                        territory: {}
+                    },
+                    construct: {
+                        base: {},
+                        beams: {},
+                        rafters: {}
+                    }
+                }
+            },
+
+            handleEvent: function(elem, event, bool){
+                
+            },
+
             init: function(){
                 console.log('VIEW initiated...');
             }
